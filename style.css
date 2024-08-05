@@ -1,0 +1,544 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Shadows+Into+Light&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    padding: 5px;
+    background-color: #101820;
+    color: white;
+    width: 100%;
+    height: 80px;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "PT Sans", sans-serif;
+    
+    height: auto;
+
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 150px;
+    width: 800px;
+    background-color: whitesmoke;
+    color: black;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+}
+
+section.home-screen .settings{
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+}
+section.home-screen .settings legend{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+section.home-screen .settings label{
+    font-size: 20px;
+}
+section.home-screen .settings .difficulty{
+    padding-top: 5px;
+}
+
+section.home-screen .info{
+    align-self: flex-start;
+    padding-top: 10px;
+
+}
+
+section.home-screen .info p{
+    font-size: 20px;
+}
+section.home-screen .info span{
+    font-size: 22px;
+    font-weight: bold;
+    color: tomato;
+}
+
+section.game-screen .data{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 20px;
+}
+
+section.game-screen > h1{
+    font-size: 30px;
+    font-weight: unset;
+}
+
+section.game-screen small{
+    font-size: 22px;
+    color: gray;
+}
+
+section.game-screen .shown-word{
+    font-size: 50px;
+    font-weight: unset;
+}
+section.game-screen span{
+    font-size: bold;
+    color: tomato;
+}
+section.game-screen input{
+    margin:15px;
+    width: 100%;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid grey;
+}
+
+section.game-screen input:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+section.result-screen p {
+    font-size: 20px;
+    padding-top: 5px;
+}
+section.result-screen h2{
+    font-size: 25px;
+    font-weight: unset;
+    padding-top: 10px;
+}
+
+section.result-screen span{
+    
+    color: tomato;
+}
+section.result-screen span#result-score{
+    font-size: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* To show the home Screen */
+main.home .home-screen{
+    display: flex;
+}
+main.home .game-screen{
+    display: none;
+}
+main.home .result-screen{
+    display: none;
+}
+
+/* To show the Game Screen */
+
+main.game .home-screen{
+    display: none;
+}
+main.game .game-screen{
+    display: flex;
+}
+main.game .result-screen{
+    display: none;
+}
+
+/* To show the result screen */
+
+main.result .home-screen{
+    display: none
+}
+main.result .game-screen{
+    display: none;
+}
+main.result .result-screen{
+    display: flex;
+}
+/* Play button */ 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+  }
+  
+  .switch {
+    font-size: 0.875rem;
+    position: relative;
+    display: inline-block;
+    width: 9em;
+    height: 2.6em;
+  }
+  
+  .switch input {
+    display: none;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .switch input:checked + .slider .ball {
+    box-shadow: 10px 10px 100px #7f8996;
+  }
+  
+  .switch input:checked + .slider .title {
+    left: 40%;
+  }
+  
+  .switch input:checked + .slider {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .switch input:focus + .slider {
+    box-shadow: 10px 10px 100px #7f8996;
+  }
+  
+  .switch input:checked + .slider .ball {
+    left: 72%;
+    transform: rotate(360deg);
+    box-shadow: none;
+    outline: 6px solid rgba(255, 255, 255, 0.278);
+  }
+  
+  .switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #313033;
+    transition: all 0.4s;
+    border-radius: 30px;
+  }
+  
+  .switch .slider .title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    transition: all 0.4s;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .switch .slider .ball {
+    background-color: #fff;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    position: absolute;
+    left: -1px;
+    transition: 0.4s;
+  }
+  
+  .switch .slider .ball .icon {
+    position: absolute;
+    top: 58%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    color: #313033;
+    font-size: 12px;
+  }
+  
+/* Radio button */ 
+.radio-button-container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  
+  .radio-button {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .radio-button__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .radio-button__label {
+    display: inline-block;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 15px;
+    color: black;
+    font-weight: 400;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+  
+  .radio-button__custom {
+    position: absolute;
+    top: 6px;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid #555;
+    transition: all 0.3s ease;
+  }
+  
+  .radio-button__input:checked + .radio-button__label .radio-button__custom {
+    background-color: tomato;
+    border-color: transparent;
+    transform: scale(0.8);
+    box-shadow: 0 0 20px rgba(175, 53, 31, 0.592)
+  }
+  
+  .radio-button__input:checked + .radio-button__label {
+    color: tomato;
+  }
+  
+  .radio-button__label:hover .radio-button__custom {
+    transform: scale(1.2);
+    border-color: tomato;
+    box-shadow: 0 0 20px rgba(175, 53, 31, 0.54)
+  }
+  
+  
+  
+  
+  
+ 
+.Btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: black
+  }
+  
+  /* plus sign */
+  .sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign svg {
+    width: 17px;
+  }
+  
+  .sign svg path {
+    fill: white;
+  }
+  /* text */
+  .text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: .3s;
+  }
+  /* hover effect on button width */
+  .Btn:hover {
+    width: 180px;
+    border-radius: 40px;
+    transition-duration: .3s;
+  }
+  
+  .Btn:hover .sign {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+  }
+  /* hover effect button's text */
+  .Btn:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+  }
+  /* button click effect*/
+  .Btn:active {
+    transform: translate(2px ,2px);
+  }
+
+  /* From Uiverse.io by barisdogansutcu */ 
+button.start {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 10px;
+    color: white;
+    text-shadow: 2px 2px rgb(116, 116, 116);
+    text-transform: uppercase;
+    cursor: pointer;
+    border: solid 2px black;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 17px;
+    background-color: hsl(49deg 98% 60%);
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+  
+  button.start:active {
+    transform: scale(0.9);
+    transition: all 100ms ease;
+  }
+  
+  button.start svg {
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+  
+  .play {
+    transition: all 0.5s ease;
+    transition-delay: 300ms;
+  }
+  
+  button.start:hover svg {
+    transform: scale(3) translate(50%);
+  }
+  
+  .now {
+    position: absolute;
+    left: 0;
+    transform: translateX(-100%);
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+  
+  button.start:hover .now {
+    transform: translateX(10px);
+    transition-delay: 300ms;
+  }
+  
+  button.start:hover .play {
+    transform: translateX(200%);
+    transition-delay: 300ms;
+  }
+   
+  @media screen and (max-width:820px) {
+    main{
+      width: 700px;
+    }
+  }
+  @media screen and (max-width:730px) {
+    main{
+      width: 600px;
+    }
+    section.home-screen .info{
+      line-height: 1.4;
+    }
+    section.game-screen .data{
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    section.game-screen small{
+      padding-bottom: 10px;
+    }
+  }
+
+  @media screen and (max-width:620px) {
+    main{
+      width: 480px;
+      margin-top: 80px;
+    }
+  
+  }
+  @media screen and (max-width:500px) {
+    main{
+      width: 400px;
+    }
+    section.home-screen .info{
+      line-height: 1.6;
+    }
+  
+  }
+
+  @media screen and (max-width:420px) {
+    main{
+      width: 350px;
+    }
+  }
+
+  @media screen and (max-width:360px) {
+    main{
+      width: 320px;
+    }
+    section.home-screen .info{
+      line-height: 1.6;
+    }
+    .radio-button-container{
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    nav{
+      font-size: 30px;
+    }
+    section.game-screen .data{
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+    section.game-screen small{
+      padding-bottom: 15px;
+    }
+  }
